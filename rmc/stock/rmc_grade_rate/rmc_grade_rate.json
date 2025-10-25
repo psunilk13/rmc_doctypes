@@ -1,0 +1,97 @@
+{
+    "actions": [],
+    "creation": "2025-03-04 11:12:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "rmc_grade",
+        "warehouse",
+        "from_date",
+        "to_date",
+        "rate",
+        "disabled"
+    ],
+    "fields": [
+        {
+            "fieldname": "rmc_grade",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "RMC Grade",
+            "options": "Item",
+            "reqd": 1,
+            "get_query": {
+                "filters": {
+                    "item_group": "RMC"
+                }
+            }
+        },
+        {
+            "fieldname": "warehouse",
+            "fieldtype": "Link",
+            "label": "Plant/Warehouse",
+            "options": "Warehouse",
+            "reqd": 1
+        },
+        {
+            "default": "Today",
+            "fieldname": "from_date",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "label": "From Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "to_date",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "label": "To Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "rate",
+            "fieldtype": "Currency",
+            "in_list_view": 1,
+            "label": "Mixing Rate per m³",
+            "options": "Company:company:default_currency",
+            "reqd": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "disabled",
+            "fieldtype": "Check",
+            "label": "Disabled"
+        }
+    ],
+    "links": [],
+    "modified": "2025-03-04 11:12:00.000000",
+    "modified_by": "Administrator",
+    "module": "Stock",
+    "custom": 0,
+    "name": "RMC Grade Rate",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Stock Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Stock User",
+            "share": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

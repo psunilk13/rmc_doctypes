@@ -1,0 +1,292 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "naming_series:",
+    "creation": "2025-03-04 11:07:34.000000",
+    "doctype": "DocType",
+    "document_type": "Document",
+    "engine": "InnoDB",
+    "field_order": [
+        "naming_series",
+        "company",
+        "production_date",
+        "ticket_number",
+        "posting_time",
+        "rmc_grade",
+        "bom",
+        "quantity",
+        "column_break_1",
+        "lorry_number",
+        "driver_name",
+        "source_warehouse",
+        "destination_warehouse",
+        "workflow_state",
+        "amended_from",
+        "section_break_1",
+        "raw_materials",
+        "section_break_2",
+        "total_raw_material_cost",
+        "column_break_2",
+        "production_cost",
+        "mixing_cost_section",
+        "mixing_rate",
+        "total_mixing_cost",
+        "section_break_3",
+        "total_cost",
+        "per_unit_cost"
+    ],
+    "fields": [
+        {
+            "fieldname": "naming_series",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Series",
+            "options": "RMC-.FY.-.#####",
+            "reqd": 1
+        },
+        {
+            "default": "M K Builders",
+            "fieldname": "company",
+            "fieldtype": "Link",
+            "label": "Company",
+            "options": "Company",
+            "reqd": 1
+        },
+        {
+            "default": "Today",
+            "fieldname": "production_date",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "label": "Production Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "ticket_number",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Ticket Number",
+            "reqd": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "posting_time",
+            "fieldtype": "Time",
+            "label": "Posting Time",
+            "reqd": 1
+        },
+        {
+            "fieldname": "rmc_grade",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "RMC Grade",
+            "options": "Item",
+            "reqd": 1,
+            "get_query": {
+                "filters": {
+                    "item_group": "RMC"
+                }
+            }
+        },
+        {
+            "fieldname": "bom",
+            "fieldtype": "Link",
+            "label": "BOM",
+            "options": "BOM"
+        },
+        {
+            "fieldname": "quantity",
+            "fieldtype": "Float",
+            "in_list_view": 1,
+            "label": "Quantity (m³)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "lorry_number",
+            "fieldtype": "Data",
+            "label": "Lorry Number",
+            "reqd": 1
+        },
+        {
+            "fieldname": "driver_name",
+            "fieldtype": "Data",
+            "label": "Driver Name"
+        },
+        {
+            "default": "MK RMC Vellanki",
+            "fieldname": "source_warehouse",
+            "fieldtype": "Link",
+            "label": "Source Warehouse",
+            "options": "Warehouse",
+            "reqd": 1
+        },
+        {
+            "fieldname": "destination_warehouse",
+            "fieldtype": "Link",
+            "in_standard_filter": 1,
+            "label": "Destination Warehouse",
+            "options": "Warehouse",
+            "reqd": 1
+        },
+        {
+            "fieldname": "workflow_state",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Status",
+            "options": "Draft\nProduced\nIn-Transit\nDelivered",
+            "reqd": 1,
+            "allow_on_submit": 1,
+            "no_copy": 1,
+            "hidden": 1,
+            "print_hide": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "RMC Production Entry",
+            "print_hide": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break",
+            "label": "Raw Materials"
+        },
+        {
+            "fieldname": "raw_materials",
+            "fieldtype": "Table",
+            "label": "Raw Materials",
+            "options": "RMC Raw Materials",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break",
+            "label": "Cost Details"
+        },
+        {
+            "fieldname": "total_raw_material_cost",
+            "fieldtype": "Currency",
+            "label": "Total Raw Material Cost",
+            "read_only": 1,
+            "options": "Company:company:default_currency"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "production_cost",
+            "fieldtype": "Currency",
+            "label": "Production Cost",
+            "options": "Company:company:default_currency"
+        },
+        {
+            "fieldname": "mixing_cost_section",
+            "fieldtype": "Section Break",
+            "label": "Mixing Cost"
+        },
+        {
+            "fieldname": "mixing_rate",
+            "fieldtype": "Currency",
+            "label": "Mixing Rate per m³",
+            "read_only": 1,
+            "options": "Company:company:default_currency"
+        },
+        {
+            "fieldname": "total_mixing_cost",
+            "fieldtype": "Currency",
+            "label": "Total Mixing Cost",
+            "read_only": 1,
+            "options": "Company:company:default_currency"
+        },
+        {
+            "fieldname": "section_break_3",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "total_cost",
+            "fieldtype": "Currency",
+            "label": "Total Cost",
+            "read_only": 1,
+            "options": "Company:company:default_currency"
+        },
+        {
+            "fieldname": "per_unit_cost",
+            "fieldtype": "Currency",
+            "label": "Per Unit Cost",
+            "read_only": 1,
+            "options": "Company:company:default_currency"
+        }
+    ],
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2025-03-04 11:07:34.000000",
+    "modified_by": "Administrator",
+    "module": "Stock",
+    "custom": 0,
+    "name": "RMC Production Entry",
+    "name_case": "Title Case",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Stock Manager",
+            "share": 1,
+            "submit": 1,
+            "write": 1,
+            "cancel": 1,
+            "amend": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Stock User",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Manufacturing User",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        }
+    ],
+    "search_fields": "ticket_number,rmc_grade,workflow_state",
+    "show_name_in_global_search": 1,
+    "show_preview_popup": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1,
+    "track_seen": 1,
+    "track_views": 1,
+    "track_status_field": "workflow_state",
+    "show_title_field_in_link": 1,
+    "title_field": "ticket_number",
+    "quick_entry": 0
+}

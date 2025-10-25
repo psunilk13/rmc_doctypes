@@ -5,6 +5,7 @@ app_description = "rmc doctypes"
 app_email = "sunil965277@gmail.com"
 app_license = "mit"
 
+fixtures = ["Custom Field", "Property Setter", "Client Script", "Custom Script", "Workflow"]
 # Apps
 # ------------------
 
